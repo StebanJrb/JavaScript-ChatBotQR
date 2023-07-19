@@ -68,7 +68,8 @@ const listenMessage = () => {
                 + "✓ Inscripción al College en USA $100-$150 USD aprox.\n"
                 + "✓ Pago Embajada Americana $160 USD\n"
                 + "✓ Pago SEVIS $350 USD\n"
-                + "✓ Trámite y Asesoría $90 USD") 
+                + "✓ Trámite y Asesoría $90 USD.\n"
+                + "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻(Porfavor escribe Si o No)") 
                 break;
 
             case 'B':
@@ -88,7 +89,8 @@ const listenMessage = () => {
                 +"✓ Trámite y Asesoría $130 USD CAD\n"
                 +"*📑Traducción De Documentos y Certificados adicionales.\n"
                 +"*📚Pago anticipado de tu programa de idiomas x 6 meses\n"
-                +"*🩺Seguro Medico Internacional para estudiantes Obligatorio\n")
+                +"*🩺Seguro Medico Internacional para estudiantes Obligatorio.\n"
+                + "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻(Porfavor escribe Si o No)")
                 break;
             case 'C':
                 sendMessage(from,"VISA DE ESTUDIANTE AUSTRALIA\n"
@@ -106,7 +108,8 @@ const listenMessage = () => {
                 + "✓ Pago Biométricos $34 USD AUD\n"
                 + "✓ Trámite y Asesoría $200 USD AUD\n"
                 + "*📚 Pago Anticipado de tu Programa de Idiomas x 6.\n"
-                + "*🩺 Seguro Medico Internacional para Estudiantes Obligatorio.")
+                + "*🩺 Seguro Medico Internacional para Estudiantes Obligatorio.\n"
+                + "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻(Porfavor escribe Si o No)")
                 break;
             case 'D':
                 sendMessage(from,"VISA DE TURISTA USA 🇺🇸\n"
@@ -121,7 +124,8 @@ const listenMessage = () => {
                 + "seguimiento de documentos y preparación para la entrevista consular de 1Hr.\n\n"
                 + "Los costos generales son los siguientes en Moneda USA Dólar:\n"
                 + "✓ Pago Embajada Americana $160 USD\n"
-                + "✓ Trámite y Asesoría $75 USD")
+                + "✓ Trámite y Asesoría $75 USD.\n"
+                + "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻(Porfavor escribe Si o No)")
                 break;
             case 'E':
                 sendMessage(from,"VISA DE TURISTA A CANADA 🇨🇦\n"
@@ -137,7 +141,8 @@ const listenMessage = () => {
                 + "✓ Pago Embajada Canada. $100 CAD\n"
                 + "✓ Pago Biométricos $85 USD CAD\n"
                 + "✓ Trámite y Asesoría $130 USD CAD\n"
-                + "✓ Traducción de Documentos y Certificados.")
+                + "✓ Traducción de Documentos y Certificados..\n"
+                + "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻(Porfavor escribe Si o No)")
                 break;
             case 'F':
                 sendMessage(from,"VISA DE TURISTA A CANADA 🇨🇦\n"
@@ -153,17 +158,25 @@ const listenMessage = () => {
                 + "✓ Pago Embajada Canada. $100 CAD\n"
                 + "✓ Pago Biométricos $85 USD CAD\n"
                 + "✓ Trámite y Asesoría $130 USD CAD\n"
-                + "✓ Traducción de Documentos y Certificados.")
+                + "✓ Traducción de Documentos y Certificados.\n"
+                + "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻(Porfavor escribe Si o No)")
+                break;
+            case "SI":
+                sendMessage(from,"Por favor déjame tu Nombre👤, Correo Electrónico📧 y Destino en un momento nos pondremos en contacto contigo.(Despues de enviarlo no es necesario seguir el flujo)")
+                break;
+            case "NO":
+                sendMessage(from,"Esperamos que nuestra información te haya sido util.\n"
+                +"Te esperamos en una próxima ocasión.")
                 break;        
             default:
                 sendMessage(from, "Hola !!\n"
                 + "Te has contactado con Vertice Universal.\n"
                 + "Tu punto de partida a multiples destinos. 🌏\n\n"
-                + "Para nosotros es un placer atender tu solicitud, a continuacion escribe la opcion que deseas consultar:\n\n"
+                + "Para nosotros es un placer atender tu solicitud, a continuacion escribe el numero de la opcion que deseas consultar:\n\n"
                 + "1️⃣ VISA Estudiante a CANADA - USA - AUSTRALIA.\n"
                 + "2️⃣ VISA Turista a CANADA - USA - AUSTRALIA.\n"
                 + "3️⃣ Renovación de VISA a USA.\n"
-                + "4️⃣Extensión de Estadia en USA.\n"
+                + "4️⃣ Extensión de Estadia en USA.\n"
                 + "5️⃣ Reagendamiento Cita USA para 2023.\n"
                 )
             
