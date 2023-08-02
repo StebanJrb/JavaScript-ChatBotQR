@@ -22,6 +22,7 @@ if (fs.existsSync(completedUsersFile)) {
     completedUsers = JSON.parse(data);
 }
 
+        
 const listenMessage = () => {
     client.on('message', (msg) => {
         const { from, body } = msg;
@@ -34,36 +35,34 @@ const listenMessage = () => {
         const upperBody = body.toUpperCase();
         switch (upperBody) {
             case '1':
-                sendMessage(from, "Escoge tu proximo pais de destino como estudiante y\n"
-                + "conoce sus requisitos basicos.(Escribe la letra)\n"
+                sendMessage(from, "Escoge tu proximo pais de destino como estudiante y conoce sus requisitos basicos\n"
                 + "A. USA 🇺🇸\n"
                 + "B. CANADA 🇨🇦\n"
                 + "C. AUSTRALIA 🇦🇺")
                 break;
             case '2':
-                sendMessage(from, "Escoge tu próximo país de destino como turista y\n"
-                + "conoce sus requisitos básicos.(Escribe la letra)\n"
+                sendMessage(from, "Escoge tu próximo país de destino como turista y conoce sus requisitos básicos.\n"
                 + "D. USA 🇺🇸\n"
                 + "E. CANADA 🇨🇦\n"
                 + "F. AUSTRALIA 🇦🇺")
                 break;
             case '3':
-                sendMessage(from, "Deseas renovar tu VISA a los Estados Unidos. 🇺🇸\n" +
-                "🔸Debes contar con que tu pasaporte tenga una vigencia superior a 6 meses. 🪪\n" +
-                "🔸Si tu VISA ya venció, podrás renovarla siempre que no haya superado un periodo de 48 meses.⏳\n" +
+                sendMessage(from, "*Si deseas renovar tu VISA a los Estados Unidos.* 🇺🇸\n" +
+                "🔸Debes contar con un pasaporte que tenga una vigencia superior a 6 meses. 🪪\n" +
+                "🔸Si tu VISA ya venció, podrás renovarla siempre que no haya superado un periodo de 48 meses.🗓️\n" +
                 "🔸Si la VISA que deseas renovar se te otorgó siendo menor de edad.🚼, tendrás que presentar entrevista consular.\n" +
                 "🔸Si eres ciudadano venezolano 🇻🇪, debes presentar entrevista consular obligatoria.\n" +
-                "🔸Formulario de solicitud formal de RENOVACION VISA USA de nuestra Agencia.\n\n" +
-                "Los costos generales son los siguientes en Moneda USA Dólar:\n" +
+                "🔸Completar formulario de solicitud formal de RENOVACION VISA USA de nuestra Agencia.\n\n" +
+                "Los costos generales son los siguientes en Moneda USD:\n" +
                 "✓ Pago Embajada Americana $185 USD\n" +
-                "✓ Trámite y Asesoría $75 USD.\n" +
+                "✓ Trámite y Asesoría $75 USD.\n\n" +
                 "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻\n" +
                 "(Por favor escribe Si o No)" )
                 break;
             case '4':
-                sendMessage(from, "Deseas Extender tu Estadía🤩 en USA. 🇺🇸\n" +
+                sendMessage(from, "*Deseas Extender tu Estadía en *🇺🇸\n" +
                 "🔸Para poder extender tu estadía en USA, lo más importante es que no hayas superado el tiempo máximo que se te permitió al ingreso.\n" +
-                "🔸Debes contar con que tu pasaporte tenga una vigencia superior a 6 meses.\n" +
+                "🔸Debes contar con un pasaporte que tenga una vigencia superior a 6 meses.\n" +
                 "🔸Debes contar con fondos suficientes o un patrocinador que respalde tu solicitud para una estadía de 1 año.\n" +
                 "\nEntre los beneficios que obtendrás están:\n" +
                 "🔸Poder vivir legalmente dentro de los USA indefinidamente.👌🏽\n" +
@@ -71,14 +70,14 @@ const listenMessage = () => {
                 "🔸Poder iniciar tu propio negocio.\n" +
                 "🔸Aplicar a otras VISAS ejemplo VISA EB3👷🏻 o VISA F1 ESTUDIANTE 👨🏼‍🎓.\n" +
                 "🔸Y la más importante, la tranquilidad de vivir sin esconderse, entre muchas otras.\n" +
-                "\nLos costos generales son los siguientes en Moneda Dólar CAD:\n" +
-                "✓ Tasa de Inscripción $200 UDS para F1👨🏼‍🎓.\n" +
+                "\nLos costos generales son los siguientes en Moneda USD:\n" +
+                "✓ Inscripción F1 $200 USD👨🏼‍🎓\n" +
                 "✓ SEVIS $350 USD para F1👨🏼‍🎓.\n" +
                 "✓ BIOMETRICOS $85 USD\n" +
                 "✓ i-539 FORM USCIS $370 USD\n" +
                 "✓ HONORARIOS TRAMITE Y ASESORIA $700 USD\n" +
                 "\n🔸Todas las solicitudes de Extensión de Estadía y Cambio de Estatus son diferentes y particulares a cada caso en específico.\n" +
-                "🔸Los valores son una referencia y pueden variar.\n" +
+                "🔸Los valores son una referencia y pueden variar.\n\n" +
                 "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻\n" +
                 "(Por favor escribe Si o No)" )
                 break;
@@ -87,7 +86,7 @@ const listenMessage = () => {
                 "🔸Esta solicitud tiene un costo de 300 COP.\n" +
                 "🔸Solamente es reagendable solicitudes individuales👤.\n" +
                 "🔸Aplica para solicitantes nuevos o que estén en 2025.\n" +
-                "\n☘ Si deseas reagendar y obtener más información contacta a nuestras representantes.\n" +
+                "\n☘ Si deseas reagendar y obtener más información contacta a nuestras representantes.\n\n" +
                 "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻\n" +
                 "(Por favor escribe Si o No)")
                 break;
@@ -100,14 +99,15 @@ const listenMessage = () => {
                 "🔸Una foto tuya 📸 en fondo blanco actual.👤\n" +
                 "🔸Extractos bancarios para demostrar solvencia económica.💰\n" +
                 "🔸Formulario de solicitud formal de VISA de nuestra Agencia.\n\n" +
-                "Nosotros nos encargamos de todo.🤓  Acompañamiento durante la solicitud, agendamiento de citas, diligenciamiento de formularios, solicitud i-120, envío, recepción, seguimiento de documentos y preparación para la entrevista consular de 1Hr.\n\n" +
-                "Los costos generales son los siguientes en Moneda USA Dólar:\n" +
+                "*_Nosotros nos encargamos de todo._*🤓\n\n" + 
+                "Acompañamiento durante la solicitud, agendamiento de citas, diligenciamiento de formularios, solicitud i-20, envío, recepción, seguimiento de documentos y preparación para la entrevista consular de 1Hr.\n\n" +
+                "Los costos generales son los siguientes en Moneda USD:\n" +
                 "✓ Inscripción al College en USA $100-$200 USD aprox.\n" +
                 "✓ Pago Embajada Americana $185 USD\n" +
                 "✓ Pago SEVIS $350 USD\n" +
                 "✓ Trámite y Asesoría $90 USD.\n" +
                 "*📑Traducción De Documentos y Certificados adicionales. (Solo si se requiere)\n" +
-                "*🩺Seguro Medico Internacional para estudiantes (Sugerido)\n" +
+                "*🩺Seguro Medico Internacional para estudiantes (Sugerido)\n\n" +
                 "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻\n" +
                 "(Por favor escribe Si o No)" ) 
                 break;
@@ -121,15 +121,16 @@ const listenMessage = () => {
                 "🔸Una foto tuya 📸 en fondo blanco actual.👤\n" +
                 "🔸Extractos bancarios para demostrar solvencia económica.💰\n" +
                 "🔸Formulario de solicitud formal de VISA de nuestra Agencia.\n\n" +
-                "Nosotros nos encargamos de todo.🤓 Acompañamiento durante la solicitud agendamiento de citas, diligenciamiento de formularios, solicitud, envío, recepción y seguimiento de documentos.\n\n" +
-                "Los costos generales son los siguientes en Moneda Dólar CAD:\n" +
+                "*_Nosotros nos encargamos de todo._*🤓\n\n" +
+                "Acompañamiento durante la solicitud agendamiento de citas, diligenciamiento de formularios, solicitud LOA, envío, recepción, seguimiento de documentos, carta de intención y su preparación.\n\n" +
+                "Los costos generales son los siguientes en Moneda CAD:\n" +
                 "✓ Inscripción al College de CANADA $180 USD CAD. Aprox\n" +
                 "✓ Pago Embajada Canada. $180 CAD\n" +
                 "✓ Pago Biométricos $85  CAD\n" +
                 "✓ Trámite y Asesoría $130  CAD\n" +
                 "*📑Traducción De Documentos y Certificados adicionales.\n" +
                 "*📚Pago anticipado de tu programa de idiomas x 6 meses\n" +
-                "*🩺Seguro Medico Internacional para estudiantes Obligatorio.\n" +
+                "*🩺Seguro Medico Internacional para estudiantes Obligatorio.\n\n" +
                 "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻\n" +
                 "(Por favor escribe Si o No)")
                 break;
@@ -142,7 +143,8 @@ const listenMessage = () => {
                 "🔸Una foto tuya 📸 en fondo blanco actual.👤\n" +
                 "🔸Extractos bancarios para demostrar solvencia económica.💰\n" +
                 "🔸Formulario de solicitud formal de VISA de nuestra Agencia.\n\n" +
-                "Nosotros nos encargamos de todo.🤓  Acompañamiento durante la solicitud, agendamiento de citas, diligenciamiento de formularios, solicitud CEO, envío, recepción, seguimiento de documentos y preparación de GTE.\n\n" +
+                "*_Nosotros nos encargamos de todo._*🤓\n\n" + 
+                "Acompañamiento durante la solicitud, agendamiento de citas, diligenciamiento de formularios, solicitud CEO, envío, recepción, seguimiento de documentos, carta de intención y preparación de GTE.\n\n" +
                 "Los costos generales son los siguientes en Moneda AUD:\n" +
                 "✓ Pago ante la embajada $650 AUD\n" +
                 "✓ Pago de Inscripción College $200 AUD Aprox.\n" +
@@ -150,7 +152,7 @@ const listenMessage = () => {
                 "✓ Trámite y Asesoría $200 USD AUD\n" +
                 "✓ Exámenes medicos $480.000 COP\n" +
                 "*📚 Pago Anticipado de tu Programa de Idiomas x 6.\n" +
-                "*🩺 Seguro Medico Internacional para Estudiantes Obligatorio.\n" +
+                "*🩺 Seguro Medico Internacional para Estudiantes Obligatorio.\n\n" +
                 "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻\n" +
                 "(Por favor escribe Si o No)")
                 break;
@@ -163,11 +165,11 @@ const listenMessage = () => {
                 "🔸Una foto tuya 📸 en fondo blanco actual.👤\n" +
                 "🔸Extractos bancarios para demostrar solvencia económica.💰\n" +
                 "🔸Formulario de solicitud formal de VISA de nuestra Agencia.\n\n" +
-                "Nosotros nos encargamos de todo.🤓\n" +
+                "*_Nosotros nos encargamos de todo._*🤓\n\n" +
                 "Acompañamiento durante la solicitud, agendamiento de citas, diligenciamiento de formularios, solicitud VISA B1/B2, envío, recepción, seguimiento de documentos y preparación para la entrevista consular de 1Hr.\n\n" +
-                "Los costos generales son los siguientes en Moneda USA Dólar:\n" +
+                "Los costos generales son los siguientes en Moneda USD:\n" +
                 "✓ Pago Embajada Americana $185 USD\n" +
-                "✓ Trámite y Asesoría $75 USD.\n" +
+                "✓ Trámite y Asesoría $75 USD.\n\n" +
                 "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻\n" +
                 "(Por favor escribe Si o No)")
                 break;
@@ -180,13 +182,13 @@ const listenMessage = () => {
                 "🔸Una foto tuya 📸 en fondo blanco actual.👤\n" +
                 "🔸Extractos bancarios para demostrar solvencia económica.💰\n" +
                 "🔸Formulario de solicitud formal de VISA de nuestra Agencia.\n\n" +
-                "Nosotros nos encargamos de todo.🤓\n" +
+                "*_Nosotros nos encargamos de todo._*🤓\n\n" +
                 "Acompañamiento durante la solicitud, agendamiento de citas, diligenciamiento de formularios, solicitud VISA VISITANTE TEMPORAL, envío, recepción, seguimiento de documentos y preparación de cartas de invitación e intención.\n\n" +
                 "Los costos generales son los siguientes en Moneda CAD:\n" +
-                "✓ Pago Embajada Canada. $100 CAD\n" +
+                "✓ Pago Embajada Canada $100 CAD\n" +
                 "✓ Pago Biométricos $85  CAD\n" +
                 "✓ Trámite y Asesoría $130 USD\n" +
-                "✓ Traducción de Documentos y Certificados..\n" +
+                "✓ Traducción de Documentos y Certificados.\n\n" +
                 "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻\n" +
                 "(Por favor escribe Si o No)")
                 break;
@@ -199,14 +201,14 @@ const listenMessage = () => {
                 "🔸Una foto tuya 📸 en fondo blanco actual.👤\n" +
                 "🔸Extractos bancarios para demostrar solvencia económica.💰\n" +
                 "🔸Formulario de solicitud formal de VISA de nuestra Agencia.\n\n" +
-                "Nosotros nos encargamos de todo.🤓\n" +
+                "*_Nosotros nos encargamos de todo._*🤓\n\n" +
                 "Acompañamiento durante la solicitud, agendamiento de citas, diligenciamiento de formularios, solicitud VISA TURISTA, envío, recepción, seguimiento de documentos y preparación de cartas de invitación e intención.\n\n" +
                 "Los costos generales son los siguientes en Moneda AUD:\n" +
-                "✓ Pago Embajada Australiana $190 AUD\n" +
+                "✓ Pago Consular $190 AUD\n" +
                 "✓ Pago Biométricos $60 AUD\n" +
                 "✓ Trámite y Asesoría $140 USD\n" +
                 "✓ Exámenes medicos $480.000 COP\n" +
-                "✓ Traducción de Documentos y Certificados.\n" +
+                "✓ Traducción de Documentos y Certificados.\n\n" +
                 "Deseas ser contactad@ por una de nuestras asesoras? 👩🏻‍💻\n" +
                 "(Por favor escribe Si o No)")
                 break;
@@ -235,18 +237,22 @@ const listenMessage = () => {
                 "Tu punto de partida a multiples destinos. 🌏\n\n" +
                 "Para nosotros es un placer atender tu solicitud, a continuación escribe el numero de la opción que deseas consultar:\n\n" +
                 "1️⃣ VISA ESTUDIANTE 👨🏻‍🎓\n" +
-                " 🇨🇦 CANADA | 🇺🇸 USA | 🇦🇺 AUSTRALIA\n\n" +
+                " 🇨🇦CANADA 🇺🇸USA 🇦🇺AUSTRALIA\n\n" +
                 "2️⃣ VISA TURISTA 😎\n" +
-                " 🇨🇦 CANADA | 🇺🇸 USA | 🇦🇺 AUSTRALIA\n\n" +
-                "3️⃣ RENOVACION🪪 DE VISA A USA 🇺🇸\n\n" +
-                "4️⃣ EXTENSION DE ESTADIA EN USA 🇺🇸\n\n" +
-                "5️⃣ REAGENDAMIENTO CITA USA PARA 2023 🇺🇸")
+                " 🇨🇦CANADA 🇺🇸USA 🇦🇺AUSTRALIA\n\n" +
+                "3️⃣ RENOVACION🪪 VISA A USA🇺🇸\n\n" +
+                "4️⃣ EXTENSION ESTADIA EN USA🇺🇸\n\n" +
+                "5️⃣ REAGENDAR CITA USA 2024🇺🇸")
+                
             break;        
         }
         console.log(from, body);
     });
 };
-
+const sendSticker = (to, sticker) => {
+    const stickerData = MessageMedia.fromFilePath(`./mediaSend/${sticker}`, { sticker: true });
+    client.sendMessage(to, stickerData);
+}
 const sendMedia = (to, file) => {
     const mediaFile = MessageMedia.fromFilePath(`./mediaSend/${file}`);
     client.sendMessage(to, mediaFile);
